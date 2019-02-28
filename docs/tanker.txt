@@ -1,0 +1,31 @@
+Noen tanker:
+- Hvilken mikrokontroller skal man bruke?
+-- Type Arduino?
+- Hvilken LoRa modul skal man bruke? Må være 868MHz.
+- Hvilen GPS modul skal man bruke?
+-- https://www.sparkfun.com/products/13740 ?
+- Skal vi bygge en hub? Ihvertfall på prototype stadiet.
+
+- Hvor kan man enklest/billigst/tryggest source deler?
+-- Kan ihvertfall bestille noe fra Kina? (Banggood)
+
+- Hvordan skal byggesettene pakkes?
+-- Kan Grønneviken gjøre det?
+
+- Trenger man CE sertifisering e.l.?
+
+- Hvordan oveføre koden til mange MCUer?
+-- Må også brenne bootloader. Husk 1uf Capacitor mellom reset og GND på programmerer boardet
+-- Kan Grønneviken gjøre det?
+
+- MÅ lage gode instruksjoner!
+-- Detaljer om å teste med multimeter
+
+- Hvor kan vi kjøpe boksen?
+
+- Testmodus
+
+- Skal kunne slå av:
+-- GPS
+-- Radio (?)
+-- Temp sensor (?)

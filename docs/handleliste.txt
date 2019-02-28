@@ -1,0 +1,17 @@
+Sensor node:
+Transistor: IRLB4132PBF * 3
+Voltage regulator: MCP1700-3302 * 1
+MCU: AtMega328P * 1
+Socket: DIP-28 * 1
+Lora Module: RFM95W * 1 : Farnell
+Antenna: ? * 1
+GPS Module: ? * 1
+Temperature sensor: ds18b20 * 1
+
+Arduino Uno for programming * 1
+
+Lora Gateway:
+Controller: Raspberry PI * 1
+Lora Modula: RFM95W * 1
+Antenna: ? * 1
+
