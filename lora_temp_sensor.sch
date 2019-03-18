@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:lora_temp_sensor-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -23,17 +23,6 @@ F 1 "ATmega328P-PU" H 1859 5155 50  0000 R CNN
 F 2 "Package_DIP:DIP-28_W7.62mm" H 2500 5200 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 2500 5200 50  0001 C CNN
 	1    2500 5200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Q_NMOS_GDS Q?
-U 1 1 5C617904
-P 4850 950
-F 0 "Q?" H 5055 996 50  0000 L CNN
-F 1 "IRLB4132PBF" H 5055 905 50  0000 L CNN
-F 2 "" H 5050 1050 50  0001 C CNN
-F 3 "~" H 4850 950 50  0001 C CNN
-	1    4850 950 
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -203,17 +192,6 @@ Text Notes 600  600  0    50   ~ 0
 Battery
 Text Notes 2150 600  0    50   ~ 0
 Voltage converter
-$Comp
-L Device:Q_NMOS_GDS Q?
-U 1 1 5C619A1D
-P 6300 950
-F 0 "Q?" H 6505 996 50  0000 L CNN
-F 1 "IRLB4132PBF" H 6505 905 50  0000 L CNN
-F 2 "" H 6500 1050 50  0001 C CNN
-F 3 "~" H 6300 950 50  0001 C CNN
-	1    6300 950 
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	3600 1800 3600 500 
 Wire Notes Line
@@ -222,109 +200,12 @@ Wire Notes Line
 	500  500  500  1800
 Wire Notes Line
 	500  1800 3600 1800
-Text GLabel 3850 950  0    50   Input ~ 0
-X1
-$Comp
-L power:GND #PWR?
-U 1 1 5C61ADB1
-P 4950 1550
-F 0 "#PWR?" H 4950 1300 50  0001 C CNN
-F 1 "GND" H 4955 1377 50  0000 C CNN
-F 2 "" H 4950 1550 50  0001 C CNN
-F 3 "" H 4950 1550 50  0001 C CNN
-	1    4950 1550
-	1    0    0    -1  
-$EndComp
-Text GLabel 4850 650  0    50   Input ~ 0
-SW_GND_1
-Text GLabel 6300 650  0    50   Input ~ 0
-SW_GND_2
-Text Notes 4300 600  0    50   ~ 0
-Bryter GPS og LORA
 Wire Notes Line
 	3650 500  3650 1800
-Wire Notes Line
-	3650 1800 7150 1800
 Wire Notes Line
 	7150 1800 7150 500 
 Wire Notes Line
 	7150 500  3650 500 
-$Comp
-L Device:R R?
-U 1 1 5C61CCEF
-P 4400 950
-F 0 "R?" V 4193 950 50  0000 C CNN
-F 1 "1k" V 4284 950 50  0000 C CNN
-F 2 "" V 4330 950 50  0001 C CNN
-F 3 "~" H 4400 950 50  0001 C CNN
-	1    4400 950 
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5C61CD7D
-P 5850 950
-F 0 "R?" V 5643 950 50  0000 C CNN
-F 1 "1k" V 5734 950 50  0000 C CNN
-F 2 "" V 5780 950 50  0001 C CNN
-F 3 "~" H 5850 950 50  0001 C CNN
-	1    5850 950 
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5C61CDF5
-P 3950 1200
-F 0 "R?" H 4020 1246 50  0000 L CNN
-F 1 "100k" H 4020 1155 50  0000 L CNN
-F 2 "" V 3880 1200 50  0001 C CNN
-F 3 "~" H 3950 1200 50  0001 C CNN
-	1    3950 1200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3850 950  3950 950 
-Wire Wire Line
-	3950 950  3950 1050
-Connection ~ 3950 950 
-Wire Wire Line
-	3950 950  4150 950 
-Wire Wire Line
-	4150 950  4250 950 
-Connection ~ 4150 950 
-Wire Wire Line
-	4550 950  4650 950 
-Wire Wire Line
-	4950 750  4950 650 
-Wire Wire Line
-	4950 650  4850 650 
-Wire Wire Line
-	4150 950  4150 1350
-Wire Wire Line
-	4950 1150 4950 1450
-Wire Wire Line
-	4950 1450 3950 1450
-Wire Wire Line
-	3950 1450 3950 1350
-Connection ~ 4950 1450
-Wire Wire Line
-	5700 950  5600 950 
-Wire Wire Line
-	5600 950  5600 1350
-Wire Wire Line
-	4150 1350 5600 1350
-Wire Wire Line
-	6000 950  6100 950 
-Wire Wire Line
-	6400 750  6400 650 
-Wire Wire Line
-	6400 650  6300 650 
-Wire Wire Line
-	6400 1150 6400 1450
-Wire Wire Line
-	6400 1450 4950 1450
-Wire Wire Line
-	4950 1550 4950 1450
 $Comp
 L Connector_Generic:Conn_01x03 J?
 U 1 1 5C6288C7
@@ -348,7 +229,7 @@ F 3 "" H 7700 750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7700 950  0    50   Input ~ 0
-SW_GND_1
+SW_GND
 Text GLabel 7700 1050 0    50   Input ~ 0
 D8
 Text Notes 8100 600  0    50   ~ 0
@@ -413,7 +294,7 @@ Wire Wire Line
 Wire Wire Line
 	3100 4100 3950 4100
 Text GLabel 4350 4700 0    50   Input ~ 0
-SW_GND_2
+SW_GND
 Wire Wire Line
 	4350 4500 4350 4600
 Wire Wire Line
@@ -441,7 +322,7 @@ F 3 "" H 3400 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4450 3400 4450 2850
+	4450 3400 4450 3150
 $Comp
 L Device:R R?
 U 1 1 5C654110
@@ -780,4 +661,73 @@ F 3 "" H 6650 6100 50  0001 C CNN
 	1    6650 6100
 	1    0    0    -1  
 $EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C870FD1
+P 3950 3250
+F 0 "#PWR?" H 3950 3000 50  0001 C CNN
+F 1 "GND" H 3955 3077 50  0000 C CNN
+F 2 "" H 3950 3250 50  0001 C CNN
+F 3 "" H 3950 3250 50  0001 C CNN
+	1    3950 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C871053
+P 4200 3150
+F 0 "C?" V 3948 3150 50  0000 C CNN
+F 1 "0.1u" V 4039 3150 50  0000 C CNN
+F 2 "" H 4238 3000 50  0001 C CNN
+F 3 "~" H 4200 3150 50  0001 C CNN
+	1    4200 3150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3950 3250 3950 3150
+Wire Wire Line
+	3950 3150 4050 3150
+Wire Wire Line
+	4350 3150 4450 3150
+Connection ~ 4450 3150
+Wire Wire Line
+	4450 3150 4450 2850
+$Comp
+L Device:Q_PMOS_GDS Q?
+U 1 1 5C8AFD8B
+P 4600 1200
+F 0 "Q?" H 4805 1154 50  0000 L CNN
+F 1 "IPB80P03P4L" H 4805 1245 50  0000 L CNN
+F 2 "" H 4800 1300 50  0001 C CNN
+F 3 "~" H 4600 1200 50  0001 C CNN
+	1    4600 1200
+	1    0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5C8AFEC5
+P 4700 900
+F 0 "#PWR?" H 4700 750 50  0001 C CNN
+F 1 "VCC" H 4717 1073 50  0000 C CNN
+F 2 "" H 4700 900 50  0001 C CNN
+F 3 "" H 4700 900 50  0001 C CNN
+	1    4700 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 900  4700 1000
+Wire Wire Line
+	4700 1400 4700 1500
+Wire Wire Line
+	4700 1500 4600 1500
+Wire Wire Line
+	4400 1200 4300 1200
+Text GLabel 4300 1200 0    50   Input ~ 0
+X1
+Text GLabel 4600 1500 0    50   Input ~ 0
+SW_VCC
+Wire Notes Line
+	3650 1800 7150 1800
+Text Notes 4300 600  0    50   ~ 0
+Bryter GPS og LORA
 $EndSCHEMATC

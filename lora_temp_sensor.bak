@@ -203,17 +203,6 @@ Text Notes 600  600  0    50   ~ 0
 Battery
 Text Notes 2150 600  0    50   ~ 0
 Voltage converter
-$Comp
-L Device:Q_NMOS_GDS Q?
-U 1 1 5C619A1D
-P 6300 950
-F 0 "Q?" H 6505 996 50  0000 L CNN
-F 1 "IRLB4132PBF" H 6505 905 50  0000 L CNN
-F 2 "" H 6500 1050 50  0001 C CNN
-F 3 "~" H 6300 950 50  0001 C CNN
-	1    6300 950 
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	3600 1800 3600 500 
 Wire Notes Line
@@ -236,9 +225,7 @@ F 3 "" H 4950 1550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 4850 650  0    50   Input ~ 0
-SW_GND_1
-Text GLabel 6300 650  0    50   Input ~ 0
-SW_GND_2
+SW_GND
 Text Notes 4300 600  0    50   ~ 0
 Bryter GPS og LORA
 Wire Notes Line
@@ -262,17 +249,6 @@ F 3 "~" H 4400 950 50  0001 C CNN
 $EndComp
 $Comp
 L Device:R R?
-U 1 1 5C61CD7D
-P 5850 950
-F 0 "R?" V 5643 950 50  0000 C CNN
-F 1 "1k" V 5734 950 50  0000 C CNN
-F 2 "" V 5780 950 50  0001 C CNN
-F 3 "~" H 5850 950 50  0001 C CNN
-	1    5850 950 
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
 U 1 1 5C61CDF5
 P 3950 1200
 F 0 "R?" H 4020 1246 50  0000 L CNN
@@ -288,18 +264,11 @@ Wire Wire Line
 	3950 950  3950 1050
 Connection ~ 3950 950 
 Wire Wire Line
-	3950 950  4150 950 
-Wire Wire Line
-	4150 950  4250 950 
-Connection ~ 4150 950 
-Wire Wire Line
 	4550 950  4650 950 
 Wire Wire Line
 	4950 750  4950 650 
 Wire Wire Line
 	4950 650  4850 650 
-Wire Wire Line
-	4150 950  4150 1350
 Wire Wire Line
 	4950 1150 4950 1450
 Wire Wire Line
@@ -307,22 +276,6 @@ Wire Wire Line
 Wire Wire Line
 	3950 1450 3950 1350
 Connection ~ 4950 1450
-Wire Wire Line
-	5700 950  5600 950 
-Wire Wire Line
-	5600 950  5600 1350
-Wire Wire Line
-	4150 1350 5600 1350
-Wire Wire Line
-	6000 950  6100 950 
-Wire Wire Line
-	6400 750  6400 650 
-Wire Wire Line
-	6400 650  6300 650 
-Wire Wire Line
-	6400 1150 6400 1450
-Wire Wire Line
-	6400 1450 4950 1450
 Wire Wire Line
 	4950 1550 4950 1450
 $Comp
@@ -348,7 +301,7 @@ F 3 "" H 7700 750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7700 950  0    50   Input ~ 0
-SW_GND_1
+SW_GND
 Text GLabel 7700 1050 0    50   Input ~ 0
 D8
 Text Notes 8100 600  0    50   ~ 0
@@ -413,7 +366,7 @@ Wire Wire Line
 Wire Wire Line
 	3100 4100 3950 4100
 Text GLabel 4350 4700 0    50   Input ~ 0
-SW_GND_2
+SW_GND
 Wire Wire Line
 	4350 4500 4350 4600
 Wire Wire Line
@@ -441,7 +394,7 @@ F 3 "" H 3400 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4450 3400 4450 2850
+	4450 3400 4450 3150
 $Comp
 L Device:R R?
 U 1 1 5C654110
@@ -731,7 +684,7 @@ L Device:C C?
 U 1 1 5C80222E
 P 6400 6000
 F 0 "C?" V 6148 6000 50  0000 C CNN
-F 1 "C" V 6239 6000 50  0000 C CNN
+F 1 "0.01u" V 6239 6000 50  0000 C CNN
 F 2 "" H 6438 5850 50  0001 C CNN
 F 3 "~" H 6400 6000 50  0001 C CNN
 	1    6400 6000
@@ -742,7 +695,7 @@ L Device:C C?
 U 1 1 5C8022E8
 P 6400 5600
 F 0 "C?" V 6148 5600 50  0000 C CNN
-F 1 "C" V 6239 5600 50  0000 C CNN
+F 1 "0.1u" V 6239 5600 50  0000 C CNN
 F 2 "" H 6438 5450 50  0001 C CNN
 F 3 "~" H 6400 5600 50  0001 C CNN
 	1    6400 5600
@@ -780,4 +733,128 @@ F 3 "" H 6650 6100 50  0001 C CNN
 	1    6650 6100
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	3950 950  4250 950 
+$Comp
+L power:GND #PWR?
+U 1 1 5C870FD1
+P 3950 3250
+F 0 "#PWR?" H 3950 3000 50  0001 C CNN
+F 1 "GND" H 3955 3077 50  0000 C CNN
+F 2 "" H 3950 3250 50  0001 C CNN
+F 3 "" H 3950 3250 50  0001 C CNN
+	1    3950 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C871053
+P 4200 3150
+F 0 "C?" V 3948 3150 50  0000 C CNN
+F 1 "0.1u" V 4039 3150 50  0000 C CNN
+F 2 "" H 4238 3000 50  0001 C CNN
+F 3 "~" H 4200 3150 50  0001 C CNN
+	1    4200 3150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3950 3250 3950 3150
+Wire Wire Line
+	3950 3150 4050 3150
+Wire Wire Line
+	4350 3150 4450 3150
+Connection ~ 4450 3150
+Wire Wire Line
+	4450 3150 4450 2850
+$Comp
+L Transistor_FET:IRLB8721PBF Q?
+U 1 1 5C895552
+P 7450 3100
+F 0 "Q?" H 7655 3146 50  0000 L CNN
+F 1 "IRLB8721PBF" H 7655 3055 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 7700 3025 50  0001 L CIN
+F 3 "http://www.infineon.com/dgdl/irlb8721pbf.pdf?fileId=5546d462533600a40153566056732591" H 7450 3100 50  0001 L CNN
+	1    7450 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5C895680
+P 7550 2700
+F 0 "#PWR?" H 7550 2550 50  0001 C CNN
+F 1 "VCC" H 7567 2873 50  0000 C CNN
+F 2 "" H 7550 2700 50  0001 C CNN
+F 3 "" H 7550 2700 50  0001 C CNN
+	1    7550 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 2700 7550 2800
+Wire Wire Line
+	7550 2800 7450 2800
+Wire Wire Line
+	7550 2800 7550 2900
+Connection ~ 7550 2800
+$Comp
+L Device:R R?
+U 1 1 5C8A1EA7
+P 7300 2800
+F 0 "R?" V 7093 2800 50  0000 C CNN
+F 1 "1M" V 7184 2800 50  0000 C CNN
+F 2 "" V 7230 2800 50  0001 C CNN
+F 3 "~" H 7300 2800 50  0001 C CNN
+	1    7300 2800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7150 2800 7050 2800
+Wire Wire Line
+	7050 2800 7050 3100
+Wire Wire Line
+	7050 3100 7250 3100
+Wire Wire Line
+	7550 3300 7550 3400
+Wire Wire Line
+	7550 3400 7450 3400
+Wire Wire Line
+	7050 3100 6950 3100
+Connection ~ 7050 3100
+Text GLabel 6950 3100 0    50   Input ~ 0
+X2
+Text GLabel 7450 3400 0    50   Input ~ 0
+SW_VCC
+$Comp
+L Device:Q_PMOS_GDS Q?
+U 1 1 5C8AFD8B
+P 9300 3150
+F 0 "Q?" H 9505 3104 50  0000 L CNN
+F 1 "IPB80P03P4L" H 9505 3195 50  0000 L CNN
+F 2 "" H 9500 3250 50  0001 C CNN
+F 3 "~" H 9300 3150 50  0001 C CNN
+	1    9300 3150
+	1    0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5C8AFEC5
+P 9400 2850
+F 0 "#PWR?" H 9400 2700 50  0001 C CNN
+F 1 "VCC" H 9417 3023 50  0000 C CNN
+F 2 "" H 9400 2850 50  0001 C CNN
+F 3 "" H 9400 2850 50  0001 C CNN
+	1    9400 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9400 2850 9400 2950
+Wire Wire Line
+	9400 3350 9400 3450
+Wire Wire Line
+	9400 3450 9300 3450
+Wire Wire Line
+	9100 3150 9000 3150
+Text GLabel 9000 3150 0    50   Input ~ 0
+X2
+Text GLabel 9300 3450 0    50   Input ~ 0
+SW_VCC
 $EndSCHEMATC
