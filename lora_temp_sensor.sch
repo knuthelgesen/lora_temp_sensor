@@ -167,7 +167,7 @@ Wire Wire Line
 	3300 900  3300 800 
 Connection ~ 3200 900 
 $Comp
-L RF_AM_FM:RFM95W-915S2 U?
+L lora_temp_sensor-rescue:RFM95W-915S2-RF_AM_FM U?
 U 1 1 5C6192AD
 P 4450 3900
 F 0 "U?" H 4450 3900 50  0000 C CNN
@@ -217,44 +217,25 @@ F 3 "~" H 8550 950 50  0001 C CNN
 	1    8550 950 
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:VCC #PWR?
-U 1 1 5C62898B
-P 7700 750
-F 0 "#PWR?" H 7700 600 50  0001 C CNN
-F 1 "VCC" H 7717 923 50  0000 C CNN
-F 2 "" H 7700 750 50  0001 C CNN
-F 3 "" H 7700 750 50  0001 C CNN
-	1    7700 750 
-	1    0    0    -1  
-$EndComp
-Text GLabel 7700 950  0    50   Input ~ 0
-SW_GND
-Text GLabel 7700 1050 0    50   Input ~ 0
+Text GLabel 7850 1050 0    50   Input ~ 0
 D8
 Text Notes 8100 600  0    50   ~ 0
 GPS
 $Comp
 L Device:R R?
 U 1 1 5C628BE6
-P 8000 1050
-F 0 "R?" V 8100 1050 50  0000 C CNN
-F 1 "1k" V 8000 1050 50  0000 C CNN
-F 2 "" V 7930 1050 50  0001 C CNN
-F 3 "~" H 8000 1050 50  0001 C CNN
-	1    8000 1050
+P 8100 1050
+F 0 "R?" V 8200 1050 50  0000 C CNN
+F 1 "1k" V 8100 1050 50  0000 C CNN
+F 2 "" V 8030 1050 50  0001 C CNN
+F 3 "~" H 8100 1050 50  0001 C CNN
+	1    8100 1050
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7700 750  7700 850 
+	8350 1050 8250 1050
 Wire Wire Line
-	7700 850  8350 850 
-Wire Wire Line
-	7700 950  8350 950 
-Wire Wire Line
-	8350 1050 8150 1050
-Wire Wire Line
-	7850 1050 7700 1050
+	7950 1050 7850 1050
 Wire Notes Line
 	7200 500  7200 1800
 Wire Notes Line
@@ -293,8 +274,6 @@ Wire Wire Line
 	3700 3600 3700 4500
 Wire Wire Line
 	3100 4100 3950 4100
-Text GLabel 4350 4700 0    50   Input ~ 0
-SW_GND
 Wire Wire Line
 	4350 4500 4350 4600
 Wire Wire Line
@@ -308,8 +287,6 @@ Wire Wire Line
 	4450 4600 4550 4600
 Wire Wire Line
 	4450 4600 4450 4700
-Wire Wire Line
-	4450 4700 4350 4700
 $Comp
 L power:VCC #PWR?
 U 1 1 5C651AB4
@@ -339,8 +316,6 @@ Wire Wire Line
 Connection ~ 3400 3900
 Wire Wire Line
 	3400 3400 3400 2850
-Wire Wire Line
-	3400 2850 4450 2850
 Wire Wire Line
 	3400 2850 3400 2750
 Connection ~ 3400 2850
@@ -450,17 +425,6 @@ Wire Wire Line
 	6150 5900 5750 5900
 Wire Wire Line
 	5750 5900 5750 6000
-$Comp
-L power:VCC #PWR?
-U 1 1 5C764849
-P 6150 5500
-F 0 "#PWR?" H 6150 5350 50  0001 C CNN
-F 1 "VCC" H 6167 5673 50  0000 C CNN
-F 2 "" H 6150 5500 50  0001 C CNN
-F 3 "" H 6150 5500 50  0001 C CNN
-	1    6150 5500
-	1    0    0    -1  
-$EndComp
 Connection ~ 6150 5900
 Connection ~ 5750 6400
 Wire Wire Line
@@ -689,9 +653,6 @@ Wire Wire Line
 	3950 3150 4050 3150
 Wire Wire Line
 	4350 3150 4450 3150
-Connection ~ 4450 3150
-Wire Wire Line
-	4450 3150 4450 2850
 $Comp
 L Device:Q_PMOS_GDS Q?
 U 1 1 5C8AFD8B
@@ -730,4 +691,45 @@ Wire Notes Line
 	3650 1800 7150 1800
 Text Notes 4300 600  0    50   ~ 0
 Bryter GPS og LORA
+Text GLabel 4350 2700 0    50   Input ~ 0
+SW_VCC
+Wire Wire Line
+	4350 2700 4450 2700
+Wire Wire Line
+	4450 2700 4450 3150
+Connection ~ 4450 3150
+$Comp
+L power:GND #PWR?
+U 1 1 5CF0DDC1
+P 4450 4700
+F 0 "#PWR?" H 4450 4450 50  0001 C CNN
+F 1 "GND" H 4455 4527 50  0000 C CNN
+F 2 "" H 4450 4700 50  0001 C CNN
+F 3 "" H 4450 4700 50  0001 C CNN
+	1    4450 4700
+	1    0    0    -1  
+$EndComp
+Text GLabel 8250 850  0    50   Input ~ 0
+SW_VCC
+Wire Wire Line
+	8250 850  8350 850 
+$Comp
+L power:GND #PWR?
+U 1 1 5CF1D3FF
+P 7550 1050
+F 0 "#PWR?" H 7550 800 50  0001 C CNN
+F 1 "GND" H 7555 877 50  0000 C CNN
+F 2 "" H 7550 1050 50  0001 C CNN
+F 3 "" H 7550 1050 50  0001 C CNN
+	1    7550 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 1050 7550 950 
+Wire Wire Line
+	7550 950  8350 950 
+Text GLabel 6050 5500 0    50   Input ~ 0
+SW_VCC
+Wire Wire Line
+	6050 5500 6150 5500
 $EndSCHEMATC
